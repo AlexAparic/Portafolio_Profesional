@@ -8,7 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     @vite(['resources/css/porta.css'])
-    
+
 </head>
 
 <body>
@@ -20,11 +20,12 @@
                 <a href="#inicio" class="active" data-lang="inicio">Inicio</a>
                 <a href="#sobre" data-lang="sobre">Sobre mi</a>
                 <a href="#proyectos" data-lang="proyectos">Proyectos Académicos</a>
+                <a href="#contacto" data-lang="contacto_menu">Contáctame</a>
                 <button id="lang-toggle" class="lang-btn">🌐 ES</button>
             </nav>
 
             <div class="hero">
-                 <div class="sobre-img">
+                <div class="sobre-img">
                     <img src="{{ asset('images/perfil.jpeg') }}" class="foto">
                 </div>
                 <h1 data-lang="nombre">William Alexander Aparicio Zelaya</h1>
@@ -34,6 +35,7 @@
         </div>
     </div>
 
+
     <!-- SLIDE 2 - SOBRE MI -->
     <div class="container" id="sobre">
         <div class="slide-content">
@@ -41,8 +43,11 @@
                 <a href="#inicio" data-lang="inicio">Inicio</a>
                 <a href="#sobre" class="active" data-lang="sobre">Sobre mi</a>
                 <a href="#proyectos" data-lang="proyectos">Proyectos Académicos</a>
+                <a href="#contacto" data-lang="contacto_menu">Contáctame</a>
+                <button id="lang-toggle" class="lang-btn">🌐 ES</button>
             </nav>
 
+            <!-- Foto + Descripción (una al lado de la otra) -->
             <div class="sobre-mi">
                 <div class="sobre-img">
                     <img src="{{ asset('images/logo.jpeg') }}" class="foto">
@@ -61,17 +66,97 @@
                         estructurado y orientado a resultados.
                     </p>
 
-                    <!-- BOTÓN CV -->
-                    <a href="{{ asset('docs/cv.pdf') }}" download class="cv-btn" data-lang="cv">
-                        Descargar CV
+                    <!-- BOTÓN CV (debajo de habilidades) -->
+                    <div class="cv-container">
+                    <a href="{{ asset('docs/Curriculum.pdf') }} "class="cv-btn" target="_blank" data-lang="cv">
+                    Descargar CV
                     </a>
+            </div>
                 </div>
             </div>
 
+            <!-- Habilidades (debajo, ocupando todo el ancho) -->
+            <div class="skills-section">
+                <h3 data-lang="skills_title">Habilidades Técnicas</h3>
+
+                <div class="skills-container">
+                    <!-- Lenguajes -->
+                    <div class="skills-category">
+                        <h4 data-lang="languages_title">Lenguajes</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">PHP</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML</span>
+                                    <span class="skill-percent">70%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 70%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">CSS</span>
+                                    <span class="skill-percent">50%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 50%"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-percent">60%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Frameworks -->
+                    <div class="skills-category">
+                        <h4 data-lang="frameworks_title">Frameworks</h4>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Laravel</span>
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- FOOTER REDES -->
             <div class="footer-redes">
-                <a href="https://www.linkedin.com/in/william-aparicio-3520031b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" data-lang="linkedin">LinkedIn</a>
-                <a href="https://github.com/AlexAparic" target="_blank" data-lang="github">GitHub</a>
+                 <a href="https://www.linkedin.com/in/william-aparicio-3520031b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" data-lang="linkedin">LinkedIn</a>
+                 <a href="https://github.com/AlexAparic" target="_blank" data-lang="github">GitHub</a>
             </div>
         </div>
     </div>
@@ -83,6 +168,8 @@
                 <a href="#inicio" data-lang="inicio">Inicio</a>
                 <a href="#sobre" data-lang="sobre">Sobre mi</a>
                 <a href="#proyectos" class="active" data-lang="proyectos">Proyectos Académicos</a>
+                <a href="#contacto" data-lang="contacto_menu">Contáctame</a>
+                <button id="lang-toggle" class="lang-btn">🌐 ES</button>
             </nav>
 
             <div>
@@ -107,7 +194,8 @@
                                 <span class="tech-badge">MySQL</span>
                             </div>
                             <p data-lang="proyecto1_desc">Aplicación web que permite a los usuarios calcular sueldo de manera eficiente y precisa a partir de sus ingresos y deducciones.</p>
-                            <a href="https://github.com/AlexAparic/calculadora-sueldos" class="proyecto-link" data-lang="ver_proyecto">Ver proyecto →</a>
+                            <p data-lang="rol12">Rol desempeñado: Desarrollador bankend</p>
+                            <a href="https://github.com/AlexAparic/calculadora-sueldos" class="proyecto-link" target="_blank" data-lang="ver_proyecto">Ver proyecto →</a>
                         </div>
                     </div>
 
@@ -127,10 +215,11 @@
                                 <span class="tech-badge">CSS</span>
                                 <span class="tech-badge">JavaScript</span>
                                 <span class="tech-badge">MariaDB</span>
-                                
+
                             </div>
                             <p data-lang="proyecto2_desc">Aplicación web que permite a los usuarios llevar un control más eficiente de sus finanzas personales, facilitando la organización de ingresos y gastos, ayudando a mejorar la administración económica personal.</p>
-                            <a href="https://github.com/XENITHCODE2025/Fineconia" class="proyecto-link" data-lang="ver_proyecto">Ver proyecto →</a>
+                            <p data-lang="rol12">Rol desempeñado: Desarrollador bankend</p>
+                            <a href="https://github.com/XENITHCODE2025/Fineconia" class="proyecto-link" target="_blank" data-lang="ver_proyecto">Ver proyecto →</a>
                         </div>
                     </div>
 
@@ -149,10 +238,105 @@
                                 <span class="tech-badge">Bootstrap</span>
                             </div>
                             <p data-lang="proyecto3_desc">Plataforma de comercio electronico completa enfocada en al venta y compra de autos de todo tipo con geolocalizacion exacta.</p>
-                            <a href="https://github.com/AlexAparic/RedSocial" class="proyecto-link" data-lang="ver_proyecto">Ver proyecto →</a>
+                            <p data-lang="rol12">Rol desempeñado: Desarrollador bankend</p>
+                            <a href="https://github.com/AlexAparic/RedSocial" class="proyecto-link" target="_blank" data-lang="ver_proyecto">Ver proyecto →</a>
+                            
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SLIDE 4 - CONTACTO -->
+    <div class="container" id="contacto">
+        <div class="slide-content">
+            <nav class="menu">
+                <a href="#inicio" data-lang="inicio">Inicio</a>
+                <a href="#sobre" data-lang="sobre">Sobre mi</a>
+                <a href="#proyectos" data-lang="proyectos">Proyectos Académicos</a>
+                <a href="#contacto" class="active" data-lang="contacto_menu">Contáctame</a>
+                <button id="lang-toggle" class="lang-btn">🌐 ES</button>
+            </nav>
+
+            <div class="contacto-container">
+                <!-- Columna izquierda: Info de contacto -->
+                <div class="contacto-info">
+                    <h2 data-lang="contacto_titulo">Contáctame</h2>
+                    <p data-lang="contacto_subtitulo">¿Tienes un proyecto en mente o quieres colaborar? Envíame un mensaje.</p>
+                    
+                    <div class="contacto-detalles">
+                        <div class="contacto-item">
+                            <span class="contacto-icono">📧</span>
+                            <div>
+                                <strong data-lang="contacto_email_label">Email</strong>
+                                <p>alexzelaya1703@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contacto-item">
+                            <span class="contacto-icono">💼</span>
+                            <div>
+                                <strong>LinkedIn</strong>
+                                <p>William Aparicio</p>
+                            </div>
+                        </div>
+                        <div class="contacto-item">
+                            <span class="contacto-icono">🌐</span>
+                            <div>
+                                <strong>GitHub</strong>
+                                <p>AlexAparic</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna derecha: Formulario -->
+                <div class="contacto-formulario-wrapper">
+                    <!-- Mensaje de éxito -->
+                    @if(session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
+                    <!-- Mensajes de error de validación -->
+                    @if($errors->any())
+                        <div class="alert alert-error">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form action="{{ route('contacto.enviar') }}" method="POST" class="contacto-formulario">
+                        @csrf
+                        <div class="form-grupo">
+                            <label for="nombre" data-lang="form_nombre">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" value="{{ old('nombre') }}" required data-lang-placeholder="form_nombre_placeholder" placeholder="Tu nombre">
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="email" data-lang="form_email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" value="{{ old('email') }}" required data-lang-placeholder="form_email_placeholder" placeholder="tu@email.com">
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="asunto" data-lang="form_asunto">Asunto</label>
+                            <input type="text" id="asunto" name="asunto" value="{{ old('asunto') }}" required data-lang-placeholder="form_asunto_placeholder" placeholder="¿De qué se trata?">
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="mensaje" data-lang="form_mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required data-lang-placeholder="form_mensaje_placeholder" placeholder="Escribe tu mensaje aquí...">{{ old('mensaje') }}</textarea>
+                        </div>
+
+                        <button type="submit" class="btn-enviar" data-lang="form_enviar">
+                            Enviar mensaje
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -163,224 +347,270 @@
         <div class="footer-links">
             <a href="https://www.linkedin.com/in/william-aparicio-3520031b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" data-lang="linkedin">LinkedIn</a>
             <a href="https://github.com/AlexAparic" target="_blank" data-lang="github">GitHub</a>
-            <p>Correo: alexzelaya1703@gmail.com</a>
+            <p data-lang="email">Correo: alexzelaya1703@gmail.com</a>
         </div>
     </footer>
 
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", () => {
 
-        let currentLang = "es";
+            let currentLang = "es";
 
-        /* =========================
-           DICCIONARIO COMPLETO
-        ========================= */
-        const translations = {
-            es: {
-                // Menú
-                inicio: "Inicio",
-                sobre: "Sobre mi",
-                proyectos: "Proyectos Académicos",
-                
-                // Hero
-                nombre: "William Alexander Aparicio Zelaya",
-                rol: "Programador backend",
-                frase: "\"Si funciona sin que lo veas, es backend.\"",
-                
-                // Sobre mi
-                sobre_titulo: "Sobre mi:",
-                sobre_texto1: "Soy William Alexander Aparicio Zelaya, desarrollador back-end enfocado en la creación de soluciones eficientes, seguras y escalables. Tengo experiencia en el desarrollo de lógica de negocio, manejo de bases de datos y construcción de APIs, utilizando tecnologías como PHP, Laravel, Node.js y JavaScript.",
-                sobre_texto2: "Me motiva optimizar el rendimiento de los sistemas, aprender continuamente y afrontar nuevos retos tecnológicos, aportando valor mediante código limpio, estructurado y orientado a resultados.",
-                
-                // Botones
-                cv: "Descargar CV",
-                ver_proyecto: "Ver proyecto →",
-                
-                // Redes sociales
-                linkedin: "LinkedIn",
-                github: "GitHub",
-                email: "Correo",
-                
-                // Proyectos
-                proyectos_titulo: "💻 Proyectos Académicos",
-                
-                proyecto1_titulo: "Calculadora de Sueldos",
-                proyecto1_desc: "Aplicación web que permite a los usuarios calcular sueldo de manera eficiente y precisa a partir de sus ingresos y deducciones.",
-                
-                proyecto2_titulo: "Fineconia",
-                proyecto2_desc: "Aplicación web que permite a los usuarios llevar un control más eficiente de sus finanzas personales, facilitando la organización de ingresos y gastos, ayudando a mejorar la administración económica personal.",
-                
-                proyecto3_titulo: "Red Social",
-                proyecto3_desc: "Plataforma de comercio electronico completa enfocada en al venta y compra de autos de todo tipo con geolocalizacion exacta.",
-                
-                // Footer
-                copyright: "© 2026 William Aparicio",
-                
-                // Errores
-                video_error: "Tu navegador no soporta el elemento de video."
-            },
-            
-            en: {
-                // Menu
-                inicio: "Home",
-                sobre: "About me",
-                proyectos: "Academic Projects",
-                
-                // Hero
-                nombre: "William Alexander Aparicio Zelaya",
-                rol: "Backend Developer",
-                frase: "\"If it works without you seeing it, it's backend.\"",
-                
-                // About me
-                sobre_titulo: "About me:",
-                sobre_texto1: "I am William Alexander Aparicio Zelaya, a back-end developer focused on creating efficient, secure, and scalable solutions. I have experience in business logic development, database management, and API construction, using technologies such as PHP, Laravel, Node.js and JavaScript.",
-                sobre_texto2: "I am motivated by optimizing system performance, continuously learning, and facing new technological challenges, adding value through clean, structured, and results-oriented code.",
-                
-                // Buttons
-                cv: "Download CV",
-                ver_proyecto: "View project →",
-                
-                // Social media
-                linkedin: "LinkedIn",
-                github: "GitHub",
-                email: "Email",
-                
-                // Projects
-                proyectos_titulo: "💻 Academic Projects",
-                
-                proyecto1_titulo: "Salary Calculator",
-                proyecto1_desc: "Web application that allows users to calculate salary efficiently and accurately based on their income and deductions.",
-                
-                proyecto2_titulo: "Fineconia",
-                proyecto2_desc: "Web application that allows users to have more efficient control of their personal finances, facilitating the organization of income and expenses, helping to improve personal economic administration.",
-                
-                proyecto3_titulo: "Social Network",
-                proyecto3_desc: "Complete e-commerce platform focused on buying and selling all types of cars with exact geolocation.",
-                
-                // Footer
-                copyright: "© 2026 William Aparicio",
-                
-                // Errors
-                video_error: "Your browser does not support the video element."
+            /* =========================
+               DICCIONARIO COMPLETO
+            ========================= */
+            const translations = {
+                es: {
+                    // Menú
+                    inicio: "Inicio",
+                    sobre: "Sobre mi",
+                    proyectos: "Proyectos Académicos",
+                    contacto_menu: "Contáctame",
+
+                    // Hero
+                    nombre: "William Alexander Aparicio Zelaya",
+                    rol: "Programador backend",
+                    frase: "\"Si funciona sin que lo veas, es backend.\"",
+
+                    // Sobre mi
+                    sobre_titulo: "Sobre mi:",
+                    sobre_texto1: "Soy William Alexander Aparicio Zelaya, desarrollador back-end enfocado en la creación de soluciones eficientes, seguras y escalables. Tengo experiencia en el desarrollo de lógica de negocio, manejo de bases de datos y construcción de APIs, utilizando tecnologías como PHP, Laravel, Node.js y JavaScript.",
+                    sobre_texto2: "Me motiva optimizar el rendimiento de los sistemas, aprender continuamente y afrontar nuevos retos tecnológicos, aportando valor mediante código limpio, estructurado y orientado a resultados.",
+
+                    // Botones
+                    cv: "Descargar CV",
+                    ver_proyecto: "Ver proyecto →",
+
+                    // Redes sociales
+                    linkedin: "LinkedIn",
+                    github: "GitHub",
+                    email: "Correo: alexzelaya1703@gmail.com",
+
+                    // Proyectos
+                    proyectos_titulo: "💻 Proyectos Académicos",
+
+                    proyecto1_titulo: "Calculadora de Sueldos",
+                    proyecto1_desc: "Aplicación web que permite a los usuarios calcular sueldo de manera eficiente y precisa a partir de sus ingresos y deducciones.",
+
+                    proyecto2_titulo: "Fineconia",
+                    proyecto2_desc: "Aplicación web que permite a los usuarios llevar un control más eficiente de sus finanzas personales, facilitando la organización de ingresos y gastos, ayudando a mejorar la administración económica personal.",
+
+                    proyecto3_titulo: "Red Social",
+                    proyecto3_desc: "Plataforma de comercio electronico completa enfocada en al venta y compra de autos de todo tipo con geolocalizacion exacta.",
+
+                    // Contacto
+                    contacto_titulo: "Contáctame",
+                    contacto_subtitulo: "¿Tienes un proyecto en mente o quieres colaborar? Envíame un mensaje.",
+                    contacto_email_label: "Email",
+                    form_nombre: "Nombre completo",
+                    form_nombre_placeholder: "Tu nombre",
+                    form_email: "Correo electrónico",
+                    form_email_placeholder: "tu@email.com",
+                    form_asunto: "Asunto",
+                    form_asunto_placeholder: "¿De qué se trata?",
+                    form_mensaje: "Mensaje",
+                    form_mensaje_placeholder: "Escribe tu mensaje aquí...",
+                    form_enviar: "Enviar mensaje",
+
+                    // Footer
+                    copyright: "© 2026 William Aparicio",
+
+                    // Errores
+                    video_error: "Tu navegador no soporta el elemento de video.",
+
+                    languages_title: "Lenguajes",
+                    skills_title: "Habilidades",
+
+                    rol12: "Rol desempeñado: Desarrollador bankend"
+                },
+
+                en: {
+                    // Menu
+                    inicio: "Home",
+                    sobre: "About me",
+                    proyectos: "Academic Projects",
+                    contacto_menu: "Contact me",
+
+                    // Hero
+                    nombre: "William Alexander Aparicio Zelaya",
+                    rol: "Backend Developer",
+                    frase: "\"If it works without you seeing it, it's backend.\"",
+
+                    // About me
+                    sobre_titulo: "About me:",
+                    sobre_texto1: "I am William Alexander Aparicio Zelaya, a back-end developer focused on creating efficient, secure, and scalable solutions. I have experience in business logic development, database management, and API construction, using technologies such as PHP, Laravel, Node.js and JavaScript.",
+                    sobre_texto2: "I am motivated by optimizing system performance, continuously learning, and facing new technological challenges, adding value through clean, structured, and results-oriented code.",
+
+                    // Buttons
+                    cv: "Download CV",
+                    ver_proyecto: "View project →",
+
+                    // Social media
+                    linkedin: "LinkedIn",
+                    github: "GitHub",
+                    email: "Email: alexzelaya1703@gmail.com",
+
+                    // Projects
+                    proyectos_titulo: "💻 Academic Projects",
+
+                    proyecto1_titulo: "Salary Calculator",
+                    proyecto1_desc: "Web application that allows users to calculate salary efficiently and accurately based on their income and deductions.",
+
+                    proyecto2_titulo: "Fineconia",
+                    proyecto2_desc: "Web application that allows users to have more efficient control of their personal finances, facilitating the organization of income and expenses, helping to improve personal economic administration.",
+
+                    proyecto3_titulo: "Social Network",
+                    proyecto3_desc: "Complete e-commerce platform focused on buying and selling all types of cars with exact geolocation.",
+
+                    // Contact
+                    contacto_titulo: "Contact me",
+                    contacto_subtitulo: "Do you have a project in mind or want to collaborate? Send me a message.",
+                    contacto_email_label: "Email",
+                    form_nombre: "Full name",
+                    form_nombre_placeholder: "Your name",
+                    form_email: "Email address",
+                    form_email_placeholder: "your@email.com",
+                    form_asunto: "Subject",
+                    form_asunto_placeholder: "What is it about?",
+                    form_mensaje: "Message",
+                    form_mensaje_placeholder: "Write your message here...",
+                    form_enviar: "Send message",
+
+                    // Footer
+                    copyright: "© 2026 William Aparicio",
+
+                    // Errors
+                    video_error: "Your browser does not support the video element.",
+
+                    languages_title: "Languages",
+                    skills_title: "Skills",
+
+                    rol12: "Role played: Backend Developer"
+                }
+            };
+
+            /* =========================
+               CAMBIAR IDIOMA
+            ========================= */
+            function changeLanguage(lang) {
+                currentLang = lang;
+
+                document.querySelectorAll("[data-lang]").forEach(el => {
+                    const key = el.getAttribute("data-lang");
+                    if (translations[lang][key]) {
+                        el.textContent = translations[lang][key];
+                    }
+                });
+
+                // Actualizar placeholders del formulario
+                document.querySelectorAll("[data-lang-placeholder]").forEach(el => {
+                    const key = el.getAttribute("data-lang-placeholder");
+                    if (translations[lang][key]) {
+                        el.placeholder = translations[lang][key];
+                    }
+                });
+
+                // Actualizar texto del botón
+                const langBtn = document.getElementById("lang-toggle");
+                if (langBtn) {
+                    langBtn.textContent = lang === "es" ? "🌐 ES" : "🌐 EN";
+                }
+
+                // Guardar preferencia
+                localStorage.setItem("preferred_language", lang);
             }
-        };
 
-        /* =========================
-           CAMBIAR IDIOMA
-        ========================= */
-        function changeLanguage(lang) {
-            currentLang = lang;
-            
-            document.querySelectorAll("[data-lang]").forEach(el => {
-                const key = el.getAttribute("data-lang");
-                if (translations[lang][key]) {
-                    el.textContent = translations[lang][key];
+            /* =========================
+               BOTÓN
+            ========================= */
+            const langToggle = document.getElementById("lang-toggle");
+            if (langToggle) {
+                // Cargar idioma guardado
+                const savedLang = localStorage.getItem("preferred_language");
+                if (savedLang && (savedLang === "es" || savedLang === "en")) {
+                    currentLang = savedLang;
+                    changeLanguage(currentLang);
                 }
-            });
-            
-            // Actualizar texto del botón
-            const langBtn = document.getElementById("lang-toggle");
-            if (langBtn) {
-                langBtn.textContent = lang === "es" ? "🌐 ES" : "🌐 EN";
+
+                // Evento click
+                langToggle.addEventListener("click", () => {
+                    const newLang = currentLang === "es" ? "en" : "es";
+                    changeLanguage(newLang);
+                });
             }
-            
-            // Guardar preferencia
-            localStorage.setItem("preferred_language", lang);
-        }
 
-        /* =========================
-           BOTÓN
-        ========================= */
-        const langToggle = document.getElementById("lang-toggle");
-        if (langToggle) {
-            // Cargar idioma guardado
-            const savedLang = localStorage.getItem("preferred_language");
-            if (savedLang && (savedLang === "es" || savedLang === "en")) {
-                currentLang = savedLang;
-                changeLanguage(currentLang);
+            /* =========================
+               SCROLL CENTRADO
+            ========================= */
+            document.querySelectorAll('.menu a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const target = document.querySelector(this.getAttribute('href'));
+
+                    if (target) {
+                        const offset = target.offsetTop - (window.innerHeight / 2) + (target.offsetHeight / 2) - 30;
+
+                        window.scrollTo({
+                            top: offset,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            /* =========================
+               ANIMACIÓN
+            ========================= */
+            const slides = document.querySelectorAll(".container");
+
+            function mostrarSlides() {
+                slides.forEach(slide => {
+                    const rect = slide.getBoundingClientRect();
+
+                    if (rect.top < window.innerHeight * 0.75 && rect.bottom > window.innerHeight * 0.25) {
+                        slide.classList.add("visible");
+                    } else {
+                        slide.classList.remove("visible");
+                    }
+                });
             }
-            
-            // Evento click
-            langToggle.addEventListener("click", () => {
-                const newLang = currentLang === "es" ? "en" : "es";
-                changeLanguage(newLang);
-            });
-        }
 
-        /* =========================
-           SCROLL CENTRADO
-        ========================= */
-        document.querySelectorAll('.menu a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
+            /* =========================
+               MENÚ ACTIVO
+            ========================= */
+            function actualizarMenu() {
+                let current = "";
 
-                const target = document.querySelector(this.getAttribute('href'));
+                slides.forEach(section => {
+                    const rect = section.getBoundingClientRect();
 
-                if(target){
-                    const offset = target.offsetTop - (window.innerHeight / 2) + (target.offsetHeight / 2) - 30;
+                    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+                        current = section.id;
+                    }
+                });
 
-                    window.scrollTo({
-                        top: offset,
-                        behavior: "smooth"
-                    });
-                }
-            });
-        });
+                document.querySelectorAll(".menu a").forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === "#" + current) {
+                        link.classList.add("active");
+                    }
+                });
+            }
 
-        /* =========================
-           ANIMACIÓN
-        ========================= */
-        const slides = document.querySelectorAll(".container");
-
-        function mostrarSlides(){
-            slides.forEach(slide => {
-                const rect = slide.getBoundingClientRect();
-
-                if(rect.top < window.innerHeight * 0.75 && rect.bottom > window.innerHeight * 0.25){
-                    slide.classList.add("visible");
-                } else {
-                    slide.classList.remove("visible");
-                }
-            });
-        }
-
-        /* =========================
-           MENÚ ACTIVO
-        ========================= */
-        function actualizarMenu(){
-            let current = "";
-
-            slides.forEach(section => {
-                const rect = section.getBoundingClientRect();
-
-                if(rect.top <= window.innerHeight/2 && rect.bottom >= window.innerHeight/2){
-                    current = section.id;
-                }
+            /* =========================
+               EVENTOS
+            ========================= */
+            window.addEventListener("scroll", () => {
+                mostrarSlides();
+                actualizarMenu();
             });
 
-            document.querySelectorAll(".menu a").forEach(link => {
-                link.classList.remove("active");
-                if(link.getAttribute("href") === "#" + current){
-                    link.classList.add("active");
-                }
-            });
-        }
-
-        /* =========================
-           EVENTOS
-        ========================= */
-        window.addEventListener("scroll", () => {
+            /* INIT */
             mostrarSlides();
             actualizarMenu();
+
         });
-
-        /* INIT */
-        mostrarSlides();
-        actualizarMenu();
-
-    
-
-    });
     </script>
 </body>
 

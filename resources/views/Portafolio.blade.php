@@ -20,6 +20,7 @@
                 <a href="#inicio" class="active" data-lang="inicio">Inicio</a>
                 <a href="#sobre" data-lang="sobre">Sobre mi</a>
                 <a href="#proyectos" data-lang="proyectos">Proyectos Académicos</a>
+                <a href="#contacto" data-lang="contacto_menu">Contactame</a>
                 <button id="lang-toggle" class="lang-btn">🌐 ES</button>
             </nav>
 
@@ -42,6 +43,7 @@
                 <a href="#inicio" data-lang="inicio">Inicio</a>
                 <a href="#sobre" class="active" data-lang="sobre">Sobre mi</a>
                 <a href="#proyectos" data-lang="proyectos">Proyectos Académicos</a>
+                <a href="#contacto" data-lang="contacto_menu">Contactame</a>
             </nav>
 
             <!-- Foto + Descripción (una al lado de la otra) -->
@@ -165,6 +167,8 @@
                 <a href="#inicio" data-lang="inicio">Inicio</a>
                 <a href="#sobre" data-lang="sobre">Sobre mi</a>
                 <a href="#proyectos" class="active" data-lang="proyectos">Proyectos Académicos</a>
+                <a href="#contacto" data-lang="contacto_menu">Contactame</a>
+
             </nav>
 
             <div>
@@ -243,6 +247,60 @@
             </div>
         </div>
     </div>
+    
+<!-- SLIDE 4 - CONTACTO -->
+ <div id="alerta-contacto" class="alerta-contacto">
+    Mensaje enviado correctamente
+</div>
+<div class="container" id="contacto">
+    <div class="slide-content">
+
+        <nav class="menu">
+            <a href="#inicio" data-lang="inicio">Inicio</a>
+            <a href="#sobre" class="active" data-lang="sobre">Sobre mi</a>
+            <a href="#proyectos" data-lang="proyectos">Proyectos Académicos</a>
+            <a href="#contacto" data-lang="contacto_menu">Contactame</a>
+        </nav>
+        <h2 class="contact-title" data-lang="contacto_titulo">📩 Contáctame</h2>
+
+        <form id="contactForm" action="{{ route('contacto.enviar') }}" method="POST" class="contact-form">
+            @csrf
+
+           <input
+    type="text"
+    name="nombre"
+    data-lang="form_nombre"
+    placeholder="Nombre completo"
+    required>
+
+<input
+    type="email"
+    name="correo"
+    data-lang="form_email"
+    placeholder="Correo electrónico"
+    required>
+
+<input
+    type="text"
+    name="asunto"
+    data-lang="form_asunto"
+    placeholder="Asunto"
+    required>
+
+<textarea
+    name="mensaje"
+    rows="6"
+    data-lang="form_mensaje"
+    placeholder="Escribe tu mensaje..."
+    required></textarea>
+
+            <button data-lang="form_enviar" type="submit">
+                Enviar mensaje
+            </button>
+        </form>
+      
+    </div>
+</div>
 
     <footer class="footer-global">
         <p data-lang="copyright">© 2026 William Aparicio</p>
@@ -252,6 +310,7 @@
             <p data-lang="email">Correo: alexzelaya1703@gmail.com</a>
         </div>
     </footer>
+    
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -307,6 +366,16 @@
 
                     languages_title: "Lenguajes",
                     skills_title: "Habilidades",
+                    contacto_menu: "Contactame",
+                    contacto_titulo: "Contactame",
+                    
+                    form_nombre: "Nombre completo",
+                    form_email: "Correo",
+                    form_asunto: "Asunto",
+                    form_mensaje: "Mensaje",
+                    
+                    form_enviar: "Enviar mensaje",
+
 
                     rol12: "Rol desempeñado: Desarrollador bankend"
 
@@ -358,8 +427,18 @@
 
                     languages_title: "Languages",
                     skills_title: "Skills",
+                    contacto_menu: "Contact",
+                    contacto_titulo: "Contact Me",
+
+                    form_nombre: "Full name",
+                    form_email: "Email",
+                    form_asunto: "Subject",
+                    form_mensaje: "Message",
+                    
+                    form_enviar: "Send message",
 
                     rol12: "Role played: Backend Developer"
+
 
                 }
             };
@@ -368,24 +447,32 @@
                CAMBIAR IDIOMA
             ========================= */
             function changeLanguage(lang) {
-                currentLang = lang;
+    currentLang = lang;
 
-                document.querySelectorAll("[data-lang]").forEach(el => {
-                    const key = el.getAttribute("data-lang");
-                    if (translations[lang][key]) {
-                        el.textContent = translations[lang][key];
-                    }
-                });
+    document.querySelectorAll("[data-lang]").forEach(el => {
 
-                // Actualizar texto del botón
-                const langBtn = document.getElementById("lang-toggle");
-                if (langBtn) {
-                    langBtn.textContent = lang === "es" ? "🌐 ES" : "🌐 EN";
-                }
+        const key = el.getAttribute("data-lang");
 
-                // Guardar preferencia
-                localStorage.setItem("preferred_language", lang);
-            }
+        if (!translations[lang][key]) return;
+
+        if (
+            el.tagName === "INPUT" ||
+            el.tagName === "TEXTAREA"
+        ) {
+            el.placeholder = translations[lang][key];
+        } else {
+            el.textContent = translations[lang][key];
+        }
+    });
+
+    const langBtn = document.getElementById("lang-toggle");
+
+    if (langBtn) {
+        langBtn.textContent = lang === "es" ? "🌐 ES" : "🌐 EN";
+    }
+
+    localStorage.setItem("preferred_language", lang);
+}
 
             /* =========================
                BOTÓN
@@ -476,10 +563,59 @@
             /* INIT */
             mostrarSlides();
             actualizarMenu();
-
+           
+            
 
 
         });
+
+        const form = document.getElementById('contactForm');
+
+if(form){
+
+    form.addEventListener('submit', async (e) => {
+
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        try{
+
+            const response = await fetch(form.action,{
+                method:'POST',
+                body:formData,
+                headers:{
+                    'X-Requested-With':'XMLHttpRequest'
+                }
+            });
+
+            const data = await response.json();
+
+            if(data.success){
+
+                // limpiar formulario
+                form.reset();
+
+                // mostrar alerta
+                const alerta = document.getElementById('alerta-contacto');
+
+                alerta.textContent = data.message;
+                alerta.classList.add('show');
+
+                // ocultar después de 4 segundos
+                setTimeout(() => {
+                    alerta.classList.remove('show');
+                }, 4000);
+            }
+
+        }catch(error){
+            console.error(error);
+        }
+
+    });
+
+}
+        
     </script>
 </body>
 

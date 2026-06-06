@@ -627,5 +627,72 @@ transform: scale(1.05);
     
     .skill-info {
         font-size: 12px;
+ 
     }
+}
+
+.contact-title{
+    text-align:center;
+    margin-bottom:30px;
+    color:#F0F6FC;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    max-width:700px;
+    margin:auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+    background:#111827;
+    border:none;
+    border-radius:12px;
+    padding:15px;
+    color:white;
+    font-family:'Inter', sans-serif;
+}
+
+.contact-form textarea{
+    resize:none;
+}
+
+.contact-form button{
+    background:#0f3460;
+    color:white;
+    border:none;
+    padding:15px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.contact-form button:hover{
+    background:#16213e;
+}
+
+.alerta-contacto{
+    position: fixed;
+    top: 90px;
+    right: 20px;
+    background: #16a34a;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-weight: 500;
+    box-shadow: 0 8px 25px rgba(0,0,0,.3);
+
+    opacity: 0;
+    transform: translateX(100px);
+
+    transition: all .4s ease;
+
+    z-index: 9999;
+}
+
+.alerta-contacto.show{
+    opacity: 1;
+    transform: translateX(0);
 }
