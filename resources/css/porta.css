@@ -696,3 +696,144 @@ transform: scale(1.05);
     opacity: 1;
     transform: translateX(0);
 }
+
+
+/* ============================
+   RESPONSIVE MÓVIL MEJORADO
+============================ */
+
+@media (max-width: 768px) {
+
+  /* Menú: íconos en lugar de texto largo */
+  .menu {
+    gap: 6px;
+    padding: 8px 10px;
+    top: 10px;
+    max-width: 95%;
+  }
+
+  .menu a {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  /* Ocultar texto y mostrar solo íconos en pantalla muy pequeña */
+  .menu a[data-lang="proyectos"]::before { content: "💻"; }
+  .menu a[data-lang="contacto_menu"]::before { content: "📩"; }
+
+  /* Slide content */
+  .slide-content {
+    padding: 80px 18px 20px;
+    border-radius: 16px;
+  }
+
+  /* Hero */
+  .foto {
+    width: 130px;
+    height: 130px;
+  }
+
+  h1 {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .frase {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  /* Sobre mi: columna en vez de fila */
+  .sobre-mi {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre-img img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .sobre-texto h2 {
+    font-size: 22px;
+  }
+
+  .sobre-texto p {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  /* Proyectos: 1 columna */
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Skills */
+  .skills-section {
+    padding: 12px;
+  }
+
+  /* Formulario */
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 15px; /* Evita zoom automático en iOS */
+    padding: 12px;
+  }
+
+  /* Footer global */
+  .footer-global {
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 15px;
+    text-align: center;
+  }
+
+  .footer-links {
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Alerta */
+  .alerta-contacto {
+    top: 70px;
+    right: 10px;
+    left: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .slide-content {
+    padding: 75px 14px 16px;
+    border-radius: 12px;
+    max-width: 98%;
+  }
+
+  .menu {
+    gap: 4px;
+    padding: 6px 8px;
+  }
+
+  .menu a {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+
+  .proyectos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+
+  .foto {
+    width: 110px;
+    height: 110px;
+  }
+}

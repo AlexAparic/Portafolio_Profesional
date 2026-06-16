@@ -261,7 +261,7 @@
             <a href="#proyectos" data-lang="proyectos">Proyectos Académicos</a>
             <a href="#contacto" data-lang="contacto_menu">Contactame</a>
         </nav>
-        <h2 class="contact-title" data-lang="contacto_titulo">📩 Contáctame</h2>
+        <h2 class="contact-title" data-lang="contacto_titulo">Contáctame</h2>
 
         <form id="contactForm" action="{{ route('contacto.enviar') }}" method="POST" class="contact-form">
             @csrf
