@@ -67,7 +67,7 @@
 
                     <!-- BOTÓN CV (debajo de habilidades) -->
                     <div class="cv-container">
-                    <a href="{{ asset('docs/Curriculum.pdf') }} "class="cv-btn" target="_blank" data-lang="cv">
+                    <a href="{{ asset('docs/Curriculum.pdf') }} "id="cv-btn" class="cv-btn" target="_blank" data-lang="cv">
                     Descargar CV
                     </a>
             </div>
@@ -446,7 +446,7 @@
             /* =========================
                CAMBIAR IDIOMA
             ========================= */
-            function changeLanguage(lang) {
+    function changeLanguage(lang) {
     currentLang = lang;
 
     document.querySelectorAll("[data-lang]").forEach(el => {
@@ -463,12 +463,22 @@
         } else {
             el.textContent = translations[lang][key];
         }
+        
     });
 
     const langBtn = document.getElementById("lang-toggle");
 
     if (langBtn) {
         langBtn.textContent = lang === "es" ? "🌐 ES" : "🌐 EN";
+    }
+    // ✅ NUEVO: cambiar el CV según idioma
+    const cvBtn = document.getElementById("cv-btn");
+    if (cvBtn) {
+        if (lang === "en") {
+            cvBtn.href = "{{ asset('docs/CurriculumEnglish.pdf') }}";
+        } else {
+            cvBtn.href = "{{ asset('docs/Curriculum.pdf') }}";
+        }
     }
 
     localStorage.setItem("preferred_language", lang);
